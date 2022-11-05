@@ -19,7 +19,7 @@ const ProtectedRoute = ({children}) => {
     if(user && user.uid){
         return children;
     }
-    return <Navigate state={{from: location}} replace/>;
+    return <Navigate to='/login' state={{from: location}} replace/>;
 };
 
 export default ProtectedRoute;

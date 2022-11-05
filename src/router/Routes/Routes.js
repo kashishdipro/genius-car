@@ -6,6 +6,7 @@ import Home from '../../pages/Home/Home/Home';
 import Login from '../../pages/Login/Login';
 import Orders from '../../pages/Orders/Orders';
 import SignUp from '../../pages/SignUp/SignUp';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         {
           path: '/checkout/:id',
           loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
-          element: <CheckOut/>
+          element: <ProtectedRoute><CheckOut/></ProtectedRoute>
         },
         {
           path: '/orders',
